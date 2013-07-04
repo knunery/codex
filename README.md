@@ -7,11 +7,11 @@ Index
 - [Unix](#unix)
 - [OS-X](#os-x)
 - [Homebrew](#homebrew)
-- [Sublime Text 2](#sublimetext2)
-- Emacs
-- Mercurial
-- Git
-- Ruby
+- [Sublime Text 2](#sublime-text-2)
+- [Emacs](#emacs)
+- [Mercurial](#mercurial)
+- [Git](#git)
+- [Ruby](#ruby)
 - Ruby on Rails
 - MySQL
 - JavaScript/CoffeeScript
@@ -41,8 +41,30 @@ CTRL C - Cancels a command or interrupts a running program.
 
 CTRL Z - Suspends a process or job but does not terminate it: use fg to restart suspended process or job.
 
+CTRL D - quits out a console, like irb, or mongo
+
+
+
 OS-X
 ------
+#### Current `~/.bash_profile` settings:
+```
+# for brew apps
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+#for ruby
+export PATH=/usr/local/opt/ruby/bin:$PATH
+
+# turns colors on
+export CLICOLOR=1
+# color scheme 1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+# causes ls to always list all files
+alias ls='ls -a'
+# change the bash prompt and its colors
+export PS1='\[\e[0;31m\]\u\[\e[0m\]:\[\e[0;33m\] \W\[\e[0m\]\$ '
+#changes default editor to emacs for things like empty git commits
+export EDITOR=emacs
+```
 
 #### [Alfred](http://www.alfredapp.com/)
 Basically Chrome's omnibox, for OS-X, allows fuzzy searching and opening of any application or file on your system.  Get it at 
@@ -87,11 +109,156 @@ So I recommend putting new path variables in the `/.bash_profile` location
 --------
 Package manager like Ubuntu's apt-get.  I like homebrew much better than MacPorts, it's faster and more intuitive.  Macports will download/install all dependencies from scratch.  While Homebrew will use preinstalled apple dependencies when possible.  Homebrew will also put apps in /usr/local/bin, which is wayyyy more intuitive than macports /opt/local.  Ultimately I want a grab and go package manager, that does as much as possible for me leaving me to code.
 
+install via the website's latest instructions
+
 [Sublime Text 2](http://www.sublimetext.com/)
 -----------
-asdfasdf
+Amazing text editor.  I transitioned over from Emacs quite easily because it retains much of the same text navigation.  Has so much more!
+
+#### Current Preferences Configuration, (Cmd ,)
+```
+{
+	"color_scheme": "Packages/Color Scheme - Default/Blackboard.tmTheme",
+	"font_size": 12.0,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"soda_classic_tabs": true,
+	"tab_size": 2,
+	"theme": "Soda Dark.sublime-theme",
+	"translate_tabs_to_spaces": true
+}
+```
+
+#### Packages:
+Package Control
+CoffeeScript
+Sass
+TrailingSpaces
+Soda theme
+
+#### Shortcuts
+Cmd , - open preferences config
+
+Cmd P - fuzzy open any file
+
+Cmd O - open a directory/file, start typing / or ~ to type out directory
+
+Cmd D - select a word, click it again to select next occurence, can edit both at the same time
+
+Cmd L - select a line
+
+Cmd Shift V - paste with indent
+
+Cmd [ , Cmd ] - indents left/right
 
 
+
+Emacs
+--------
+Don't really use this anymore due to sublime being so much better, but here are some commands I used to use a lot
+
+M-w copy
+
+use m-m to jump to beginning of line then tab, instead of C-a, then tab
+
+To do camel case, M-x subword-mode
+
+C-v M-v  move forward one screen, back one screen
+
+M-x then type compile, to compile, then type gcc -o file file.c
+
+C-x h, select all
+
+m-} m-{ move forward/back paragraphs
+
+C-j new line
+
+C- L make current line center of screen
+
+M-g g go to line
+
+C-x 3 split horizontally
+
+C-x o switch to other window
+
+C-x right tab to next buffer
+
+C-x left tab to previous buffer
+
+C-x 0 kill current buffer
+
+M-x mode-name
+
+html-mode
+
+C - x [ move to beginning of page
+
+C -  x ] move to end of page
+
+Mercurial
+---------
+Version control alternative to git.  Started using it at Fog Creek, and it has some nice features.  Use is quite similar.
+
+#### Commands:
+
+##### Similar to git
+`hg push/pull` same push/pulling
+
+`hg book` look at hg bookmarks, similar to git branches
+
+`hg up (bookmarkname)` changes current directory to named bookmark, sort of like checking out a branch
+
+`hg commit -m '(message)'` same as git commit.  Note: hg doesn't have an 'add', any changes that are made are automatically added to staging, and commit sets them into a commit
+
+`hg merge (bookmarkname)` merges the named bookmark into the bookmark we are on
+##### Patchqueues
+`hg qnew` throws all changes to the working directory into a temporary patchqueue
+
+`hg qrefresh` any changes to working directory are merged into the currently applied patchqueue
+
+`hg qpop` pull the patchqueue off the working directory, we are back to the last commit, we are free to change branches using `hg book`
+
+`hg qunapplied` lists unapplied q's
+
+`hg qpush` pushes the most recent patchqueue onto the working directory
+
+`hg qfinish -a` finishes all patchqueues and turns them into commits
+
+
+Git
+-----
+
+`git add .` adds all changes to the working directory
+
+`git add -u` removes all removed files and commits
+
+`git clean -df` , removes all noncommitted changes
+
+`git commit -m '(message)'` commits the current changes with a message
+
+`git push/pull` self explanatory
+
+`git checkout -b deployment origin/master` makes a deployment branch:
+
+`git pull --rebase` update deployment branch
+
+
+
+Ruby
+----------
+
+`irb` brings up the interactive ruby console
+
+
+in ruby, this is instead represented by self
+Hash.each do |key, value|
+puts key
+puts value
+end
+(hashes have two values when calling a .each function)
+print something.inspect is shortcutted to     p something
 # TRASH
 
 
@@ -127,79 +294,8 @@ when declaring a new char array, do
 
 char* aNewArray = malloc(sizeof(char)*x+1);
 
-Latex commands
-save files as .tex files
-to compile into .dvi, simply type latex file.name
-to compile to pdf, do dvipdf file.dvi
-
-vim commands
-hjkl to move
-:wq to save
-	:w just to save
-	:q just to quit
-	:q! quit without saving
-:Ex to explore
-a - insert after cursor
-/<text> to find text in file
-:%s/<original_text>/<new_text> to find all instances of original text and replace with new text
-vim -R <file_name> open in read only mode
-dd delete a line
-yy yank a link
-p paste
-<number> <command> do command given number of time (i.e. 5dd - delete 5 lines starting
-from cursor)
-
-emacs Commands(m = alt)(c = ctrl)
-M-w copy
-use m-m to jump to beginning of line then tab, instead of C-a, then tab
-To do camel case, M-x subword-mode
-C-v M-v  move forward one screen, back one screen
-M-x then type compile, to compile, then type gcc -o file file.c
 
 
-
-
-
-C-x h, select all
-
-
-m-} move forward/back paragraphs
-m-{
-C-j new line
-C- L make current line center of screen
-M-g g go to line
-C-x 3 split horizontally
-C-x o switch to other window
-C-x right tab to next buffer
-C-x left tab to previous buffer
-C-x 0 kill current buffer
-M-x mode-name
-html-mode
-C - x [ move to beginning of page
-C -  x ] move to end of page
-
-Vim commands
-i-insert mode
-esc-normal mode <visual mode>
-hjkl for nav
-d for delete currently selected cursor
-
-command line:
-ctrl D - exits a console
-use \ instead of / for auto completion on windows of directories
-
-irb(interactive ruby)
-ctrl D - exit the console
-	or type ‘exit’
-
-Ruby
-in ruby, this is instead represented by self
-Hash.each do |key, value|
-puts key
-puts value
-end
-(hashes have two values when calling a .each function)
-print something.inspect is shortcutted to     p something
 
 rails
 
@@ -243,12 +339,7 @@ from root directory, do
 
 
 Git
-to make a deployment branch:
-git checkout -b deployment origin/master
-to update deployment branch
-git pull --rebase
-git add -u, removes all removed files and commits
-git clean -df , removes all noncommitted changes
+
 
 
 

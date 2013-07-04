@@ -11,6 +11,7 @@ Index
 - [Emacs](#emacs)
 - [Mercurial](#mercurial)
 - [Git](#git)
+- [MergeTools](#mergetools)
 - [Ruby](#ruby)
 - [Ruby on Rails](#ruby-on-rails)
 - [JavaScript/CoffeeScript](#javascript/coffeescript)
@@ -251,7 +252,18 @@ Git
 
 `git pull --rebase` update deployment branch
 
+`git mergetool` deals with merge conflicts using a GUI tool
 
+`git difftool` diffs working repository with commited repository using visual tool
+
+
+Mergetools
+-------------
+OS-X comes with FileMerge, or called opendiff in the terminal, looks nice
+
+kdiff3 comes with 3 way merge, trying it out right now
+
+meld?
 
 Ruby
 ----------

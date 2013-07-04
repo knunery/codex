@@ -114,6 +114,10 @@ Package manager like Ubuntu's apt-get.  I like homebrew much better than MacPort
 
 install via the website's latest instructions
 
+`brew search (string)` to search for a package
+
+`brew install (packagename)` to isntall
+
 [Sublime Text 2](http://www.sublimetext.com/)
 -----------
 Amazing text editor.  I transitioned over from Emacs quite easily because it retains much of the same text navigation.  Has so much more!

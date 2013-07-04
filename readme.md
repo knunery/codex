@@ -1,12 +1,19 @@
+Technical Codex - tS3m
+======================
 
+Table of Contents
+-----------------
 
-Commenting in ERB 
+Unix/OS X
+---------
+Commenting in ERB
 Single line: <%-# commented line -%>
 Block:
  <% if false %>
 code to comment
 <% end %>
-
+> adfasdf
+> asdfasdf
 
 Some javascript/jquery essentials
 Getting elements from document: jQuery() or $()
@@ -16,8 +23,8 @@ jQuery functions will only work on jQuery objects
 
 Simple onClick function example (coffeescript)
 jQuery ->                                     // wait until document ready
-    $(‘.clickable’).click ->              // execute code when element with class ‘clickable’ is clicked 
-        // Do stuff           
+    $(‘.clickable’).click ->              // execute code when element with class ‘clickable’ is clicked
+        // Do stuff
 
 Coding in C
 char* aStringLiteral = “asdfadsfa”;
@@ -116,7 +123,7 @@ rails generate controller Users new --no-test-framework
 rails generate model User name:string email:string
 rake db:migrate
 
-to generate entities in data model go to 
+to generate entities in data model go to
 lib/tasks/sample_data.rake and do stuff
 
 to create a new user
@@ -141,7 +148,7 @@ rake assets:precompile
 Capistrano
 gem ‘capistrano’
 bundle install
-from root directory, do 
+from root directory, do
 ‘capify .’    -> makes a Capfile, and a config/deploy.rb file
 
 OS X
@@ -159,7 +166,7 @@ git clean -df , removes all noncommitted changes
 Unix
 OS X: rm -R (directory or file), force removes anything!!
 remove directory rmdir
-remove everything in current folder:    rm -rf * # f option 
+remove everything in current folder:    rm -rf * # f option
 to become root
 sudo -s
 ps aux | grep 'solr'  	to find all running instances of solr
@@ -193,7 +200,7 @@ ssh -i /microkey.pem ubuntu@DNS.server.com
 chmod 400 microkey.pem to fix the permissions on it
 
 Sunspot
-to get the server running 
+to get the server running
 rake sunspot:solr:start
 to reindex
 rake sunspot:reindex
@@ -279,11 +286,11 @@ place the following into /etc/apache2/httpd.conf (modify as per your app locatio
 
 run apache2 and get bad user name error
 to fix:
-in /etc/apache2/apache2.conf, change lines 
+in /etc/apache2/apache2.conf, change lines
 User ${APACHE....}$
 Group ${APACHE_RUN_GROUP}
 
-to 
+to
 
 User www-data
 Group www-data

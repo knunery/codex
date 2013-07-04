@@ -70,6 +70,7 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 ```
 
+Customize bash prompt.  Lots more info [here](https://www.ibm.com/developerworks/linux/library/l-tip-prompt/) and [here](http://apple.stackexchange.com/questions/9821/can-i-make-my-mac-os-x-terminal-color-items-according-to-syntax-like-the-ubuntu)
 
 #### Environmental/PATH settings
 OS-X will look in the following locations, first to last for PATH settings

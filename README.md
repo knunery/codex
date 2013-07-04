@@ -12,9 +12,10 @@ Index
 - [Mercurial](#mercurial)
 - [Git](#git)
 - [Ruby](#ruby)
-- Ruby on Rails
-- MySQL
-- JavaScript/CoffeeScript
+- [Ruby on Rails](#ruby-on-rails)
+- [MySQL](#mysql)
+- [JavaScript/CoffeeScript](#javascript/coffeescript)
+- [Coding in C](#coding-in-c)
 
 
 
@@ -259,22 +260,164 @@ puts value
 end
 (hashes have two values when calling a .each function)
 print something.inspect is shortcutted to     p something
-# TRASH
 
 
-Commenting in ERB
-Single line: <%-# commented line -%>
-Block:
- <% if false %>
-code to comment
-<% end %>
-> adfasdf
-> asdfasdf
 
-Some javascript/jquery essentials
-Getting elements from document: jQuery() or $()
-  Ex: To get elements with class “myClass” - $(‘.myClass’)
-	Ex: To get elements with id ‘myClass’ - $(‘#myClass’)
+
+Ruby on Rails
+-------------
+
+####To get rails app running after a clean clone of the repository:
+cd to the directory
+```
+bundle install
+rake db:schema:load
+rake sunspot:solr:start
+rake db:populate
+rails server
+```
+see it running in the browser at at localhost:3000
+
+#### General
+in rails, “this” from java becomes “self”
+
+user.update_attributes( name: “safga”, email: “asfgafg”) <--update attributes, pass in a hash
+
+to make a user, do this:
+```
+rails generate controller Users new --no-test-framework
+rails generate model User name:string email:string
+rake db:migrate
+```
+to generate entities in data model go to
+`lib/tasks/sample_data.rake` and do stuff
+
+to create a new user
+```
+matt = User.new(name: “Matthew Tse”, password: “asdfadf”)
+matt.save
+```
+or `matt = User.create(name: “Matthew Tse”, password: “pass”)`
+
+
+`User.find(index)` to find a user
+
+
+`aUser.destroy` to destroy a user
+
+`rake db:schema:load` to load up a new database
+
+
+`RAILS_ENV=production (rake db:migrate, or any other command)` to run something in production
+
+`rake assets:precompile` to get CSS to compile
+
+#### Capistrano
+```
+gem ‘capistrano’
+bundle install
+```
+from root directory, do
+`capify .`    -> makes a Capfile, and a config/deploy.rb file
+
+#### APACHE
+to restart:
+
+`etc/init.d/apache2 restart` or
+
+`sudo service apache2 restart` or
+
+`apachectl -k graceful-stop`
+
+#### Heroku
+
+`heroku run console` run console
+
+`heroku run rake db:reset` reset db
+
+`git remote add heroku git@heroku.com:project.git`
+
+
+#### Sunspot
+`rake sunspot:solr:start` to get the server running
+
+`rake sunspot:reindex` to reindex
+
+`rake sunspot:solr:start RAILS_ENV=test` turn on sunspot for rspec testing
+
+#### Getting a rails app running on Amazon EC2
+
+`chmod 400 microkey.pem` to fix the permissions on the microkey.pem file
+
+`ssh -i /microkey.pem ubuntu@DNS.server.com` to ssh in
+
+1. install ruby using RVM!!!!! not regularly not compiling
+2. install all the dependencies using apt-get
+3. install rails via `gem install rails`
+4. install `apache2` via `apt-get`
+5. install `apache2-prefork-dev` via `apt-get`
+6. set environmental variables: `APXS2`, set ruby path 
+
+    `which apxs2` should work and point to the path, in my case it is `/usr/bin/apxs2`
+	
+    `which ruby` should work and point to the latest rvm ruby version, in my case `/home/ts3m/.rvm/gems/ruby-1.9.3-p194/bin`
+
+7. install passenger via `rvmsudo gem install passenger`
+8. install passengermod via `rvmsudo passenger-install-apache2-module`
+
+9. add the LoadModule passenger_module
+```
+PassengerRoot
+PassengerRuby
+```
+stuff to `/etc/apache2/apache2.conf` at the very bottom
+
+10. place the following into /etc/apache2/httpd.conf (modify as per your app location)
+```
+<VirtualHost *:80>
+    ServerName omniduke.local
+    DocumentRoot /home/ts3m/Development/omniDuke/public
+    <Directory /home/ts3m/Development/omniDuke/public>
+         AllowOverride all
+        Options -MultiViews
+    </Directory>
+</VirtualHost>
+```
+
+11. run apache2 and get bad user name error
+to fix: in `/etc/apache2/apache2.conf`, change lines
+```
+User ${APACHE....}$
+Group ${APACHE_RUN_GROUP}
+```
+to
+```
+User www-data
+Group www-data
+```
+
+and add the folowing lines to the end of /etc/apache2/envvars
+```
+APACHE_RUN_USER=www-data
+APACHE_RUN_GROUP=www-data
+```
+##### Server Commands
+
+`sudo service apache2 restart` to restart apache2
+`rvmsudo passenger-status` check if passenger is running
+
+navigate to the DNS URL from your regular computer’s browser, should see passenger phusion screen
+
+run standard database migrations etc. using
+RAILS_ENV=production rake db:migrate etc.
+
+Javascript/CoffeeScript
+------------------------
+`jQuery()` or `$()` gett elements from document
+
+`$(‘.myClass’)` to get by class
+
+`$(‘#myID’)` to get by ID
 jQuery functions will only work on jQuery objects
 
 Simple onClick function example (coffeescript)
@@ -283,108 +426,22 @@ jQuery ->                                     // wait until document ready
         // Do stuff
 
 Coding in C
-char* aStringLiteral = “asdfadsfa”;
-	-creates a read-only string literal stored somewhere, you CANNOT do aStringLiteral[0]=’d’
+------------
+
+`char* aStringLiteral = “asdfadsfa”;` creates a read-only string literal stored somewhere, you CANNOT do `aStringLiteral[0]=’d’`
 
 instead, do
-char aCharArray[] = “asdfadsfa”;
-	-creates a char array, you can do aCharArray[2]=’d’;
+`char aCharArray[] = “asdfadsfa”;` creates a char array, you can do `aCharArray[2]=’d’`;
 
-when declaring a new char array, do
+when declaring a new char array, do:
 
-char* aNewArray = malloc(sizeof(char)*x+1);
+`char* aNewArray = malloc(sizeof(char)*x+1);`
 
-
-
-
-rails
-
-in rails, “this” from java becomes “self”
-
-user.update_attributes( name: “safga”, email: “asfgafg”) <--update attributes, pass in a hash
-
-to make a user, do this:
-rails generate controller Users new --no-test-framework
-rails generate model User name:string email:string
-rake db:migrate
-
-to generate entities in data model go to
-lib/tasks/sample_data.rake and do stuff
-
-to create a new user
-matt = User.new(name: “Matthew Tse”, password: “asdfadf”)
-matt.save
-
-or matt = User.create(name: “Matthew Tse”, password: “pass”)
-to find a user
-User.find(index)
-
-to destroy a user
-aUser.destroy
-
-rake db:schema:load to load up a new database
-
-to run something in production
-RAILS_ENV=production rake db:migrate etc.
-
-to get CSS to compile, do
-rake assets:precompile
-
-Capistrano
-gem ‘capistrano’
-bundle install
-from root directory, do
-‘capify .’    -> makes a Capfile, and a config/deploy.rb file
-
-
-
-Git
+# TRASH
 
 
 
 
-Heroku
-run console
-heroku run console
-
-reset db
-heroku run rake db:reset
-
-git remote add heroku git@heroku.com:project.git
-
-HTTP
-link_to defaults to HTTP get
-Button_to defaults to HTTP post
-
-Capybara:
-print page.html
-
-EC2
-to ssh in
-ssh -i /microkey.pem ubuntu@DNS.server.com
-chmod 400 microkey.pem to fix the permissions on it
-
-Sunspot
-to get the server running
-rake sunspot:solr:start
-to reindex
-rake sunspot:reindex
-turn on sunspot for rspec testing
-rake sunspot:solr:start RAILS_ENV=test
-
-APACHE
-to restart,
-etc/init.d/apache2 restart
-sudo service apache2 restart
-apachectl -k graceful-stop
-
-To get rails app running after a clean clone of the repository:
-cd to the directory
-bundle install
-rake db:schema:load
-rake sunspot:solr:start
-rake db:populate
-rails server, see it running at localhost:3000
 
 Mysql
 sudo apt-get install mysql-server mysql-client libmysqlclient-dev (optional to set a password)
@@ -421,58 +478,7 @@ mysqldump --opt --single-transaction --user=root db/development > xyz.sql
 to restore, replace db/production with name of destination database, xya with name of backup file
 mysql --user=root db/production < xyz.sql
 
-Documenting getting EC2 up and running
-install ruby using RVM!!!!! not regularly not compiling
-install all the dependencies using apt-get
-install rails via 	gem install rails
-install apache2 via	apt-get
-install apache2-prefork-dev via 	apt-get
-set environmental variables: APXS2, set ruby path
-	which apxs2 should work and point to the path, in my case it is /usr/bin/apxs2
-	which ruby should work and point to the latest rvm ruby version
-	ruby should be in the echo $PATH, in my case
-		/home/ts3m/.rvm/gems/ruby-1.9.3-p194/bin
-install passenger via 	rvmsudo gem install passenger
-install passengermod via 		rvmsudo passenger-install-apache2-module
-add the LoadModule passenger_module
-	PassengerRoot
-	PassengerRuby
-stuff to /etc/apache2/apache2.conf at the very bottom
 
-place the following into /etc/apache2/httpd.conf (modify as per your app location)
-<VirtualHost *:80>
-    ServerName omniduke.local
-    DocumentRoot /home/ts3m/Development/omniDuke/public
-    <Directory /home/ts3m/Development/omniDuke/public>
-         AllowOverride all
-        Options -MultiViews
-    </Directory>
-</VirtualHost>
-
-run apache2 and get bad user name error
-to fix:
-in /etc/apache2/apache2.conf, change lines
-User ${APACHE....}$
-Group ${APACHE_RUN_GROUP}
-
-to
-
-User www-data
-Group www-data
-
-
-and add the folowing lines to the end of /etc/apache2/envvars
-
-APACHE_RUN_USER=www-data
-APACHE_RUN_GROUP=www-data
-
-sudo service apache2 restart 	to restart apache2
-rvmsudo passenger-status check if passenger is running
-
-navigate to the DNS URL from your regular computer’s browser, should see passenger phusion screen
-
-run standard database migrations etc. using
-RAILS_ENV=production rake db:migrate etc.
 
 
 Reference ubuntu rails setup

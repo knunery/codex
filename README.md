@@ -1,11 +1,91 @@
 Technical Codex - tS3m
 ======================
+Codex of all the tweaks, commands, and configurations for the technology stacks I've run across.
 
-Table of Contents
------------------
+Index
+---
+- [Unix](#unix)
+- [OS-X](#os-x)
+- Homebrew
+- Sublime Text 2
+- Emacs
+- Mercurial
+- Git
+- Ruby
+- Ruby on Rails
+- MySQL
+- JavaScript/CoffeeScript
 
-Unix/OS X
+
+
+Unix
 ---------
+
+#### Creating Symbolic Links
+`ln -s (source) (destination)`
+
+For example: `ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl`
+will link sublime text to a symbolic link named subl, which I can then access from the terminal because /usr/local/bin/ is in the $PATH
+
+#### Command Line commands
+
+`rm -R (directory or file)`
+force removes anything!!
+
+`which (executable)` tells you the path of the executable
+
+`source (file)` causes terminal to reload a file, good for quickly changing the `~/.bash_profile` settings and reloading it
+
+#### Shell
+CTRL C - Cancels a command or interrupts a running program.
+
+CTRL Z - Suspends a process or job but does not terminate it: use fg to restart suspended process or job.
+
+OS-X
+------
+
+#### [Alfred](http://www.alfredapp.com/)
+Basically Chrome's omnibox, for OS-X, allows fuzzy searching and opening of any application or file on your system.  Get it at 
+
+#### Shortcuts
+Cmd W - closes the current window
+
+Cmd (1-9) - selects that tab
+
+Cmd Tab - alt tab from windows
+
+#### Terminal
+
+Go to Settings -> keyboard, and check use option as meta key
+
+Choose Homebrew theme because it looks the best.
+
+I'm using Menlo Size 11 font right now.
+
+Customize colors for terminal text.  Place the following in ~/.bash_profile
+```
+# turns colors on
+export CLICOLOR=1
+# color scheme good for dark homebrew scheme
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+```
+
+
+#### Environmental/PATH settings
+OS-X will look in the following locations, first to last for PATH settings
+```
+/etc/profile
+~/.bash_profile
+~/.bash_login   (if .bash_profile does not exist)
+~/.profile      (if .bash_login does not exist)
+```
+So I recommend putting new path variables in the `/.bash_profile` location
+
+
+
+# TRASH
+
+
 Commenting in ERB
 Single line: <%-# commented line -%>
 Block:
@@ -151,9 +231,7 @@ bundle install
 from root directory, do
 ‘capify .’    -> makes a Capfile, and a config/deploy.rb file
 
-OS X
-Ctrl F4 goes to next window
-Ctrl Shift F4 previous window
+
 
 Git
 to make a deployment branch:
@@ -163,20 +241,7 @@ git pull --rebase
 git add -u, removes all removed files and commits
 git clean -df , removes all noncommitted changes
 
-Unix
-OS X: rm -R (directory or file), force removes anything!!
-remove directory rmdir
-remove everything in current folder:    rm -rf * # f option
-to become root
-sudo -s
-ps aux | grep 'solr'  	to find all running instances of solr
 
-which ruby
-which emacs
-	tells you where the symlink points to
-
-ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
-creates a symlink to a file, link is in /usr/local/bin, the first item is the source
 
 Heroku
 run console

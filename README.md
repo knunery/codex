@@ -13,9 +13,9 @@ Index
 - [Git](#git)
 - [Ruby](#ruby)
 - [Ruby on Rails](#ruby-on-rails)
-- [MySQL](#mysql)
 - [JavaScript/CoffeeScript](#javascript/coffeescript)
 - [Coding in C](#coding-in-c)
+- [MySQL](#mysql)
 
 
 
@@ -312,6 +312,28 @@ or `matt = User.create(name: “Matthew Tse”, password: “pass”)`
 
 `rake assets:precompile` to get CSS to compile
 
+#### Reference ubuntu rails setup
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install curl
+sudo apt-get install emacs
+curl -L https://get.rvm.io | bash -s stable
+source /home/ts3m/.rvm/scripts/rvm
+sudo apt-get install git
+rvm requirements
+#install them all
+rvm install 1.9.3
+rvm use 1.9.3
+gem install rails
+sudo apt-get install libpq-dev
+sudo apt-get dist-upgrade
+rvm --default use 1.9.3
+
+libmysqlclient-dev
+```
+
+
 #### Capistrano
 ```
 gem ‘capistrano’
@@ -437,70 +459,48 @@ when declaring a new char array, do:
 
 `char* aNewArray = malloc(sizeof(char)*x+1);`
 
-# TRASH
 
 
+MySQL
+---------------
 
-
-
-Mysql
-sudo apt-get install mysql-server mysql-client libmysqlclient-dev (optional to set a password)
+#### MySQL on Ubuntu
+`sudo apt-get install mysql-server mysql-client libmysqlclient-dev (optional to set a password)`
 
 remove ‘pg’ and ‘sqlite3’ gems from Gemfile
 
 add ‘mysql’ gem to Gemfile
 
 add/modify the following lines to config/database.yml
-
+```
 development:
   adapter: mysql
   database: db/development
   pool: 5
   username: root
   password:
-
-
+```
 do this 3 times for development, test, and production, replacing the first and 3rd lines respectively, put a password if you created a password for your mysql server during installation
 
+```
 bundle install
 rake db:create:all (creates for dev, test, and production)
 rake db:schema:load
 rake db:populate
 rake sunspot:reindex
-
+```
 you’re done!
 
 to backup and restore mysql databases
 
 to backup, replace db/development with database name, replace xyz with name of backup file
-mysqldump --opt --single-transaction --user=root db/development > xyz.sql
+`mysqldump --opt --single-transaction --user=root db/development > xyz.sql`
 
 to restore, replace db/production with name of destination database, xya with name of backup file
-mysql --user=root db/production < xyz.sql
+`mysql --user=root db/production < xyz.sql`
 
 
-
-
-Reference ubuntu rails setup
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install curl
-sudo apt-get install emacs
-curl -L https://get.rvm.io | bash -s stable
-source /home/ts3m/.rvm/scripts/rvm
-sudo apt-get install git
-rvm requirements
-#install them all
-rvm install 1.9.3
-rvm use 1.9.3
-gem install rails
-sudo apt-get install libpq-dev
-sudo apt-get dist-upgrade
-rvm --default use 1.9.3
-
-libmysqlclient-dev
-
-mysql os x
+#### MySQL on OS-X
 
 If you have installed the Startup Item, use this command:
 

@@ -6,8 +6,8 @@ Index
 ---
 - [Unix](#unix)
 - [OS-X](#os-x)
-- Homebrew
-- Sublime Text 2
+- [Homebrew](#homebrew)
+- [Sublime Text 2](#sublimetext2)
 - Emacs
 - Mercurial
 - Git
@@ -70,7 +70,8 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 ```
 
-Customize bash prompt.  Lots more info [here](https://www.ibm.com/developerworks/linux/library/l-tip-prompt/) and [here](http://apple.stackexchange.com/questions/9821/can-i-make-my-mac-os-x-terminal-color-items-according-to-syntax-like-the-ubuntu)
+Customize bash prompt.  Lots more info [here](https://www.ibm.com/developerworks/linux/library/l-tip-prompt/) and [here](http://apple.stackexchange.com/questions/9821/can-i-make-my-mac-os-x-terminal-color-items-according-to-syntax-like-the-ubuntu).  Current settings are (#username: #Directory) with red username and yellow directory
+`export PS1='\[\e[0;31m\]\u\[\e[0m\]:\[\e[0;33m\] \W\[\e[0m\]\$ '`
 
 #### Environmental/PATH settings
 OS-X will look in the following locations, first to last for PATH settings
@@ -82,6 +83,13 @@ OS-X will look in the following locations, first to last for PATH settings
 ```
 So I recommend putting new path variables in the `/.bash_profile` location
 
+[Homebrew](http://mxcl.github.io/homebrew/)
+--------
+Package manager like Ubuntu's apt-get.  I like homebrew much better than MacPorts, it's faster and more intuitive.  Macports will download/install all dependencies from scratch.  While Homebrew will use preinstalled apple dependencies when possible.  Homebrew will also put apps in /usr/local/bin, which is wayyyy more intuitive than macports /opt/local.  Ultimately I want a grab and go package manager, that does as much as possible for me leaving me to code.
+
+[Sublime Text 2](http://www.sublimetext.com/)
+-----------
+asdfasdf
 
 
 # TRASH

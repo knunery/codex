@@ -77,6 +77,8 @@ Cmd (1-9) - selects that tab
 
 Cmd Tab - alt tab from windows
 
+Cmd Shift 4 - take a screen shot by dragging a box with the mouse
+
 #### Terminal
 
 Go to Settings -> keyboard, and check use option as meta key

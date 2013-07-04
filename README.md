@@ -80,6 +80,13 @@ Cmd Tab - alt tab from windows
 
 Cmd Shift 4 - take a screen shot by dragging a box with the mouse
 
+#### Preferences
+
+Full Keyboard Access: allows me to use the tab key when selecting "dont save, save, cancel"
+
+System Preferences -> Keyboard -> Keyboard Shortcuts -> Full Keyboard Access -> All Control
+
+
 #### Terminal
 
 Go to Settings -> keyboard, and check use option as meta key

@@ -43,6 +43,10 @@ CTRL C - Cancels a command or interrupts a running program.
 
 CTRL Z - Suspends a process or job but does not terminate it: use fg to restart suspended process or job.
 
+`bg` - runs the most recently CTRLZ'd job in the background
+
+`(executable) &` ampresand runs a job in the background
+
 CTRL D - quits out a console, like irb, or mongo
 
 

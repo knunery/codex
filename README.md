@@ -78,6 +78,8 @@ Basically Chrome's omnibox, for OS-X, allows fuzzy searching and opening of any 
 #### Shortcuts
 Cmd W - closes the current window
 
+Cmd Q - quits the current application
+
 Cmd (1-9) - selects that tab
 
 Cmd Tab - alt tab from windows

@@ -11,7 +11,7 @@ Index
 - [Emacs](#emacs)
 - [Mercurial](#mercurial)
 - [Git](#git)
-- [MergeTools](#mergetools)
+- [FilMerge](#filemerge)
 - [Ruby](#ruby)
 - [Ruby on Rails](#ruby-on-rails)
 - [JavaScript/CoffeeScript](#javascript/coffeescript)
@@ -270,11 +270,13 @@ Git
 `git difftool` diffs working repository with commited repository using visual tool
 
 
-Mergetools
+Filemerge
 -------------
+Great visual diff/merge tool that comes with OS-X, looks more modern than the other tools.
 
-#### FileMerge
-Great visual diff/merge tool that comes with OS-X, looks more modern than the other tools.  To get it working with mercurial,
+Might need to modify the symbolic link so opendiff -> filemerge
+
+#### Work With Mercurial
 
 Create a script called fmdiff.  Its contents are
 ```
@@ -296,8 +298,19 @@ filemerge.executable = /usr/local/bin/fmdiff
 filemerge.args = $local $other -ancestor $base -merge $output
 ```
 
+#### Work with Git
 
-Might need to modify the symbolic link so opendiff -> filemerge
+modify the `~/.gitconfig` file to include:
+```
+[diff]
+        tool = opendiff
+        prompt = false
+```
+
+make sure opendiff is in the path
+
+run it using the command `git difftool -d`
+
 
 
 ----------

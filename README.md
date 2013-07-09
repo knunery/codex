@@ -272,13 +272,31 @@ Git
 
 Mergetools
 -------------
-OS-X comes with FileMerge, or called opendiff in the terminal, looks nice
 
-kdiff3 comes with 3 way merge, trying it out right now
+#### FileMerge
+Great visual diff/merge tool that comes with OS-X, looks more modern than the other tools.  To get it working with mercurial,
 
-meld?
+Create a script called fmdiff.  Its contents are
+```
+#!/bin/sh
+# opendiff returns immediately, without waiting for FileMerge to exit.
+# Piping the output makes opendiff wait for FileMerge.
+opendiff "$@" | cat
+```
 
-Ruby
+Modify your .hgrc file to include:
+```
+[extdiff]
+cmd.fmdiff = /usr/local/bin/fmdiff
+
+[merge-tools]
+filemerge.executable = /usr/local/bin/fmdiff
+filemerge.args = $local $other -ancestor $base -merge $output
+```
+
+Might need to modify the symbolic link so opendiff -> filemerge
+
+
 ----------
 
 `irb` brings up the interactive ruby console

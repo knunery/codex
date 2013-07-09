@@ -284,6 +284,8 @@ Create a script called fmdiff.  Its contents are
 opendiff "$@" | cat
 ```
 
+Make the script executable via: `chmod 755 fmdiff`
+
 Modify your .hgrc file to include:
 ```
 [extdiff]
@@ -293,6 +295,7 @@ cmd.fmdiff = /usr/local/bin/fmdiff
 filemerge.executable = /usr/local/bin/fmdiff
 filemerge.args = $local $other -ancestor $base -merge $output
 ```
+
 
 Might need to modify the symbolic link so opendiff -> filemerge
 

@@ -86,7 +86,9 @@ Cmd Tab - alt tab from windows
 
 Cmd Shift 4 - take a screen shot by dragging a box with the mouse
 
-Ctrl H - delete character behind the cursor
+Ctrl H - delete character behind the cursor, basically the backspace
+
+Ctrl D - deletes character after the cursor, basically a del key
 
 Ctrl L - center the visible area around cursor
 

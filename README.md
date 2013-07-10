@@ -86,6 +86,14 @@ Cmd Tab - alt tab from windows
 
 Cmd Shift 4 - take a screen shot by dragging a box with the mouse
 
+Ctrl H - delete character behind the cursor
+
+Ctrl L - center the visible area around cursor
+
+Ctrl O - insert new line after cursor
+
+Ctrl V - move down a page
+
 #### Preferences
 
 Full Keyboard Access: allows me to use the tab key when selecting "dont save, save, cancel"

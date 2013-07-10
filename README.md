@@ -323,22 +323,6 @@ run it using the command `git difftool -d`
 
 
 
-----------
-
-`irb` brings up the interactive ruby console
-
-
-in ruby, this is instead represented by self
-Hash.each do |key, value|
-puts key
-puts value
-end
-(hashes have two values when calling a .each function)
-print something.inspect is shortcutted to     p something
-
-
-
-
 Ruby on Rails
 -------------
 

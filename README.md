@@ -257,6 +257,8 @@ Version control alternative to git.  Started using it at Fog Creek, and it has s
 
 `hg qfinish -a` finishes all patchqueues and turns them into commits
 
+`hg qref -X .` moves all changes from patch into current working directory
+
 
 Git
 -----

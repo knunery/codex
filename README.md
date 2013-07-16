@@ -324,6 +324,27 @@ make sure opendiff is in the path
 run it using the command `git difftool -d`
 
 
+Kdiff3
+-----------
+
+As sexy as the FileMerge GUI looks, it's not all that great for actual merges.  We only have a 2-way view instead of a 3 way view(base, local, and other), it's a bit confusing as to what's actually coming out since there's no 'output pane,' and we cannot directly input new edits.  So for complicated merges, I'll resort to kdiff3 with its terrible GUI, but I'll stick with filemerge for diffs.
+
+Make a symlink to kdiff3 to put it in the path.  On OS X it is in `/Applications/kdiff3.app/Contents/MacOS/kdiff3`
+
+### kdiff3 with Mercurial
+
+Add to ~/.hgrc:
+
+```
+[extensions]
+hgext.extdiff =
+
+[extdiff]
+cmd.kdiff3 =
+
+[merge-tools]
+kdiff3.args = $base $local $other -o $output
+```
 
 Ruby on Rails
 -------------

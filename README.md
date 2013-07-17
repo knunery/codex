@@ -184,7 +184,8 @@ Cmd Shift V - paste with indent
 
 Cmd [ , Cmd ] - indents left/right
 
-
+#### Tips
+- When finding something using `Ctrl F`, click `esc` to exit out of the find
 
 Emacs
 --------

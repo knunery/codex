@@ -72,8 +72,6 @@ export PS1='\[\e[0;31m\]\u\[\e[0m\]:\[\e[0;33m\]\W\[\e[0m\]\$ '
 export EDITOR=emacs
 ```
 
-#### [Alfred](http://www.alfredapp.com/)
-Basically Chrome's omnibox, for OS-X, allows fuzzy searching and opening of any application or file on your system.  Get it at 
 
 #### Shortcuts
 Cmd W - closes the current window

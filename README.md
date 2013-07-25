@@ -160,6 +160,24 @@ Amazing text editor.  I transitioned over from Emacs quite easily because it ret
 }
 ```
 
+#### Current Keymaps in `Preferences: Key Bindings - User`
+Get rid of the dumb OS X special characters for the alt key, and use emacs meta bindings
+```
+[
+  { "keys": ["option+b"], "command": "move", "args": {"by": "subwords", "forward": false} },
+  { "keys": ["option+f"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
+  { "keys": ["option+shift+b"], "command": "move", "args": {"by": "subwords", "forward": false, "extend": true} },
+  { "keys": ["option+shift+f"], "command": "move", "args": {"by": "subword_ends", "forward": true, "extend": true} },
+  { "keys": ["option+p"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false} },
+  { "keys": ["option+n"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true} },
+  { "keys": ["option+shift+p"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false, "extend": true} },
+  { "keys": ["option+shift+n"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true, "extend": true} }
+]
+
+
+```
+
+
 #### Packages:
 Package Control
 CoffeeScript

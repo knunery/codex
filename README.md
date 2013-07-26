@@ -181,7 +181,7 @@ Amazing text editor.  I transitioned over from Emacs quite easily because it ret
 ```
 
 #### Current Keymaps in `Preferences: Key Bindings - User`
-Get rid of the dumb OS X special characters for the alt key, and use emacs meta bindings
+Get rid of the dumb OS X special characters for the alt key, and use emacs meta bindings, tabs indent rather than tab
 ```
 [
   { "keys": ["option+b"], "command": "move", "args": {"by": "subwords", "forward": false} },
@@ -192,6 +192,7 @@ Get rid of the dumb OS X special characters for the alt key, and use emacs meta 
   { "keys": ["option+n"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true} },
   { "keys": ["option+shift+p"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false, "extend": true} },
   { "keys": ["option+shift+n"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true, "extend": true} }
+  { "keys": ["tab"], "command": "indent"}
 ]
 
 

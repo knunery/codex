@@ -296,6 +296,16 @@ Version control alternative to git.  Started using it at Fog Creek, and it has s
 
 `hg qref -X .` moves all changes from patch into current working directory
 
+##### Creating a new bookmark(git branches)
+`hg bookmark '#{bookmark name}'` to create a new bookmark
+
+`hg push -f -B '#{bookmarkname}'` to force push the bookmark into the repo
+
+##### Deleting a bookmark
+`hg book-d '#{bookmarkName}'`
+
+`hg push -B '#{bookmarkName}'`
+
 
 Git
 -----

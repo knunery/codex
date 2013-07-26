@@ -94,6 +94,26 @@ Ctrl O - insert new line after cursor
 
 Ctrl V - move down a page
 
+#### Custom KeyBindings to emulate Emacs Navigation
+Put the following file in ~/Library/KeyBindings/DefaultKEyBinding.dict
+```
+/* ~/Library/KeyBindings/DefaultKeyBinding.dict */
+
+{
+    "~f"        = "moveWordForward:";           /* M-f */
+    "~b"        = "moveWordBackward:";          /* M-b */
+    "~<"        = "moveToBeginningOfDocument:"; /* M-< */
+    "~>"        = "moveToEndOfDocument:";       /* M-> */
+    "~v"        = "pageUp:";                    /* M-v */
+    "^v"        = "pageDown:";                  /* C-v */
+    "~d"        = "deleteWordForward:";         /* M-d */
+    "~^h"       = "deleteWordBackward:";        /* M-C-h */
+    "~\010"     = "deleteWordBackward:";        /* M-backspace */
+    "~\177"     = "deleteWordBackward:";        /* M-delete */
+    "~\UF728"   = "deleteWordForward:";         /* delete */
+}
+```
+
 #### Preferences
 
 Full Keyboard Access: allows me to use the tab key when selecting "dont save, save, cancel"

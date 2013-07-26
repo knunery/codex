@@ -95,7 +95,7 @@ Ctrl O - insert new line after cursor
 Ctrl V - move down a page
 
 #### Custom KeyBindings to emulate Emacs Navigation
-Put the following file in ~/Library/KeyBindings/DefaultKEyBinding.dict
+Put the following file in ~/Library/KeyBindings/DefaultKeyBinding.dict
 ```
 /* ~/Library/KeyBindings/DefaultKeyBinding.dict */
 
@@ -107,7 +107,7 @@ Put the following file in ~/Library/KeyBindings/DefaultKEyBinding.dict
     "~v"        = "pageUp:";                    /* M-v */
     "^v"        = "pageDown:";                  /* C-v */
     "~d"        = "deleteWordForward:";         /* M-d */
-    "~^h"       = "deleteWordBackward:";        /* M-C-h */
+    "~h"       = "deleteWordBackward:";        /* M-C-h */
     "~\010"     = "deleteWordBackward:";        /* M-backspace */
     "~\177"     = "deleteWordBackward:";        /* M-delete */
     "~\UF728"   = "deleteWordForward:";         /* delete */

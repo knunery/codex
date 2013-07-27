@@ -1,0 +1,6 @@
+[extdiff]
+cmd.fmdiff = /usr/local/bin/fmdiff
+
+[merge-tools]
+filemerge.executable = /usr/local/bin/fmdiff
+filemerge.args = $local $other -ancestor $base -merge $output

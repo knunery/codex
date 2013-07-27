@@ -1,0 +1,6 @@
+[user]
+	name = mattse
+	email = matt.s.tse@gmail.com
+[diff]
+	tool = opendiff
+	prompt = false

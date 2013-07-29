@@ -1,6 +1,8 @@
 [extdiff]
 cmd.fmdiff = /usr/local/bin/fmdiff
+cmd.kdiff3 =
 
 [merge-tools]
 filemerge.executable = /usr/local/bin/fmdiff
 filemerge.args = $local $other -ancestor $base -merge $output
+kdiff3.args = $base $local $other -o $output

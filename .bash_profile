@@ -13,3 +13,6 @@ alias ls='ls -a'
 export PS1='\[\e[0;31m\]\u\[\e[0m\]:\[\e[0;33m\]\W\[\e[0m\]\$ '
 #changes default editor to emacs for things like empty git commits
 export EDITOR=emacs
+
+# source the individual machine's .profile file
+source ~/.profile

@@ -7,5 +7,20 @@
   { "keys": ["option+n"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true} },
   { "keys": ["option+shift+p"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false, "extend": true} },
   { "keys": ["option+shift+n"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true, "extend": true} },
-  { "keys": ["tab"], "command": "indent"}
+  { "keys": ["super+e"], "command": "expand_selection", "args": {"to": "line"} },
+  { "keys": ["alt+tab"], "command": "insert", "args": {"characters": "\t"} },
+    { "keys": ["tab"], "command": "indent" },
+    { "keys": ["tab"], "command": "next_field", "context":
+      [
+        { "key": "has_next_field", "operator": "equal", "operand": true }
+      ]
+    },
+    { "keys": ["tab"], "command": "reindent", "context":
+      [
+        { "key": "setting.auto_indent", "operator": "equal", "operand": true },
+        { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+        { "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
+        { "key": "following_text", "operator": "regex_match", "operand": "^$", "match_all": true }
+      ]
+    }
 ]

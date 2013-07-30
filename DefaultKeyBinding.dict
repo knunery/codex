@@ -8,7 +8,7 @@
     "~v"        = "pageUp:";                    /* M-v */
     "^v"        = "pageDown:";                  /* C-v */
     "~d"        = "deleteWordForward:";         /* M-d */
-    "~h"       = "deleteWordBackward:";        /* M-C-h */
+    "~h"        = "deleteWordBackward:";        /* M-C-h */
     "~\010"     = "deleteWordBackward:";        /* M-backspace */
     "~\177"     = "deleteWordBackward:";        /* M-delete */
     "~\UF728"   = "deleteWordForward:";         /* delete */

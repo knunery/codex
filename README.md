@@ -53,24 +53,19 @@ CTRL D - quits out a console, like irb, or mongo
 
 OS-X
 ------
-#### Current `~/.bash_profile` settings:
-```
-# for brew apps
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-#for ruby
-export PATH=/usr/local/opt/ruby/bin:$PATH
+#### `~/.bash_profile` settings:
+Find them in the git directory.  It has a `source ~/.profile` line at the end of it, to allow custom settings per machine in a `~/.profile` file
 
+Customize colors for terminal text.  Place the following in ~/.bash_profile
+```
 # turns colors on
 export CLICOLOR=1
-# color scheme 1
+# color scheme good for dark homebrew scheme
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-# causes ls to always list all files
-alias ls='ls -a'
-# change the bash prompt and its colors
-export PS1='\[\e[0;31m\]\u\[\e[0m\]:\[\e[0;33m\]\W\[\e[0m\]\$ '
-#changes default editor to emacs for things like empty git commits
-export EDITOR=emacs
 ```
+
+Customize bash prompt.  Lots more info [here](https://www.ibm.com/developerworks/linux/library/l-tip-prompt/) and [here](http://apple.stackexchange.com/questions/9821/can-i-make-my-mac-os-x-terminal-color-items-according-to-syntax-like-the-ubuntu).  Current settings are (#username: #Directory) with red username and yellow directory
+`export PS1='\[\e[0;31m\]\u\[\e[0m\]:\[\e[0;33m\] \W\[\e[0m\]\$ '`
 
 
 #### Shortcuts
@@ -94,28 +89,10 @@ Ctrl O - insert new line after cursor
 
 Ctrl V - move down a page
 
-#### Custom KeyBindings to emulate Emacs Navigation
-Put the following file in ~/Library/KeyBindings/DefaultKeyBinding.dict
-```
-/* ~/Library/KeyBindings/DefaultKeyBinding.dict */
-
-{
-    "~f"        = "moveWordForward:";           /* M-f */
-    "~b"        = "moveWordBackward:";          /* M-b */
-    "~<"        = "moveToBeginningOfDocument:"; /* M-< */
-    "~>"        = "moveToEndOfDocument:";       /* M-> */
-    "~v"        = "pageUp:";                    /* M-v */
-    "^v"        = "pageDown:";                  /* C-v */
-    "~d"        = "deleteWordForward:";         /* M-d */
-    "~h"       = "deleteWordBackward:";        /* M-C-h */
-    "~\010"     = "deleteWordBackward:";        /* M-backspace */
-    "~\177"     = "deleteWordBackward:";        /* M-delete */
-    "~\UF728"   = "deleteWordForward:";         /* delete */
-}
-```
+#### Custom DefaultKeyBinding.dict to emulate Emacs Navigation
+find the file in the source directory.  Make a symlink in ~/Library/KeyBindings/DefaultKeyBinding.dict from it
 
 #### Preferences
-
 Full Keyboard Access: allows me to use the tab key when selecting "dont save, save, cancel"
 
 System Preferences -> Keyboard -> Keyboard Shortcuts -> Full Keyboard Access -> All Control
@@ -129,16 +106,8 @@ Choose Homebrew theme because it looks the best.
 
 I'm using Menlo Size 11 font right now.
 
-Customize colors for terminal text.  Place the following in ~/.bash_profile
-```
-# turns colors on
-export CLICOLOR=1
-# color scheme good for dark homebrew scheme
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-```
+In Startup -> New windows open with: Same Settings , underneatth Same Working Directory
 
-Customize bash prompt.  Lots more info [here](https://www.ibm.com/developerworks/linux/library/l-tip-prompt/) and [here](http://apple.stackexchange.com/questions/9821/can-i-make-my-mac-os-x-terminal-color-items-according-to-syntax-like-the-ubuntu).  Current settings are (#username: #Directory) with red username and yellow directory
-`export PS1='\[\e[0;31m\]\u\[\e[0m\]:\[\e[0;33m\] \W\[\e[0m\]\$ '`
 
 #### Environmental/PATH settings
 OS-X will look in the following locations, first to last for PATH settings

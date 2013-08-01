@@ -252,7 +252,7 @@ Version control alternative to git.  Started using it at Fog Creek, and it has s
 
 `hg merge (bookmarkname)` merges the named bookmark into the bookmark we are on
 ##### Patchqueues
-`hg qnew` throws all changes to the working directory into a temporary patchqueue
+`hg qnew -m "foo" P2` throws all changes to the working directory into a temporary patchqueue with the name P2, with the commit message 'foo'
 
 `hg qrefresh` any changes to working directory are merged into the currently applied patchqueue
 
@@ -265,6 +265,8 @@ Version control alternative to git.  Started using it at Fog Creek, and it has s
 `hg qfinish -a` finishes all patchqueues and turns them into commits
 
 `hg qref -X .` moves all changes from patch into current working directory
+
+`hg qpush --move some-patch` move a patch to the top of the queue
 
 ##### Creating a new bookmark(git branches)
 `hg bookmark '#{bookmark name}'` to create a new bookmark

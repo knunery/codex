@@ -278,6 +278,17 @@ Version control alternative to git.  Started using it at Fog Creek, and it has s
 
 `hg push -B '#{bookmarkName}'`
 
+##### Bisecting
+
+Completely awesome way to find the bad commit for a bug.
+
+`hg bisect init` to start it up
+
+`hg bisect --bad` to mark the tip as bad
+
+Find a bad changeset, then `hg bisect --good` to start bisecting
+
+It will automatically update you to test changesets, and you mark each one `--good` or `--bad` until you get to the end
 
 Git
 -----

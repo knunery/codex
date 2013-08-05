@@ -268,6 +268,8 @@ Version control alternative to git.  Started using it at Fog Creek, and it has s
 
 `hg qpush --move some-patch` move a patch to the top of the queue
 
+`hg fmdiff -r qparent` use filemerge Diff with patchqueues
+
 ##### Creating a new bookmark(git branches)
 `hg bookmark '#{bookmark name}'` to create a new bookmark
 

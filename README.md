@@ -98,6 +98,11 @@ Full Keyboard Access: allows me to use the tab key when selecting "dont save, sa
 System Preferences -> Keyboard -> Keyboard Shortcuts -> Full Keyboard Access -> All Control
 
 
+#### Get letters/keys to repeat properly.
+
+When holding down a letter, OS X will give you options, like `a` with several different accents.  Type this in terminal to get all keys to repeat upon press/hold
+`defaults write -g ApplePressAndHoldEnabled -bool false`
+
 #### Terminal
 
 Go to Settings -> keyboard, and check use option as meta key

@@ -179,6 +179,8 @@ CoffeeScript
 Sass
 TrailingSpaces
 Soda theme
+#### Emmet
+- awesome html editing aid.  Instead of typing out <div id='asdf' class='asdfad'><div>  Just type div#id.classname and type the complete shortcut.  Make sure you override the Ctrl+E shortcut to something like Ctrl+Z, in Sublime -> preferences -> package settings -> Emmet -> KeyBindings -Default
 
 #### Shortcuts
 Cmd , - open preferences config

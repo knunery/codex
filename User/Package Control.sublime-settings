@@ -4,8 +4,14 @@
 	[
 		"CoffeeScript",
 		"Emmet",
+		"LaTeXTools",
 		"LESS",
+		"Markdown Preview",
+		"MarkdownBuild",
 		"Package Control",
-		"Theme - Soda"
+		"Sass",
+		"Theme - Nil",
+		"Theme - Soda",
+		"Tomorrow Color Schemes"
 	]
 }

@@ -22,5 +22,6 @@
         { "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
         { "key": "following_text", "operator": "regex_match", "operand": "^$", "match_all": true }
       ]
-    }
+    },
+  { "keys": ["super+k", "super+t"], "command": "title_case" }
 ]

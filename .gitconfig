@@ -4,3 +4,7 @@
 [diff]
 	tool = opendiff
 	prompt = false
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain

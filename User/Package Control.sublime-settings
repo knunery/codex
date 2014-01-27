@@ -4,14 +4,18 @@
 	[
 		"CoffeeScript",
 		"Emmet",
+		"Handlebars",
 		"LaTeXTools",
 		"LESS",
 		"Markdown Preview",
 		"MarkdownBuild",
 		"Package Control",
 		"Sass",
+		"SML (Standard ML)",
+		"Stylus",
 		"Theme - Nil",
 		"Theme - Soda",
-		"Tomorrow Color Schemes"
+		"Tomorrow Color Schemes",
+		"TrailingSpaces"
 	]
 }

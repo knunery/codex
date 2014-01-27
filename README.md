@@ -77,6 +77,8 @@ Cmd (1-9) - selects that tab
 
 Cmd Tab - alt tab from windows
 
+Cmd ` - swap between windows of the same application
+
 Cmd Shift 4 - take a screen shot by dragging a box with the mouse
 
 Ctrl H - delete character behind the cursor, basically the backspace

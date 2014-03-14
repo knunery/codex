@@ -5,7 +5,10 @@
 	"scroll_past_end": true,
 	"soda_classic_tabs": true,
 	"translate_tabs_to_spaces": true,
-    "tab_size": 2,
+	"tab_size": 2,
+	"hot_exit": false,
+	"remember_open_files": true,
+	"enable_tab_scrolling": false,
 	"ignored_packages":
 	[
 		"Vintage"

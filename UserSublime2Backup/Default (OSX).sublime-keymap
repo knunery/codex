@@ -1,4 +1,6 @@
 [
+  { "keys": ["option+b"], "command": "move", "args": {"by": "subwords", "forward": false} },
+  { "keys": ["option+f"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
   { "keys": ["option+shift+b"], "command": "move", "args": {"by": "subwords", "forward": false, "extend": true} },
   { "keys": ["option+shift+f"], "command": "move", "args": {"by": "subword_ends", "forward": true, "extend": true} },
   { "keys": ["option+p"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false} },

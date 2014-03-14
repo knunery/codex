@@ -1,22 +1,9 @@
 {
-	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
 		"3024 Color Scheme",
-		"CoffeeScript",
-		"Emmet",
 		"Handlebars",
-		"LaTeXTools",
-		"LESS",
-		"Markdown Preview",
-		"MarkdownBuild",
-		"Package Control",
-		"Sass",
-		"SML (Standard ML)",
-		"Stylus",
-		"Theme - Nil",
 		"Theme - Soda",
-		"Tomorrow Color Schemes",
 		"TrailingSpaces"
 	]
 }

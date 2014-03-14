@@ -1,16 +1,16 @@
 {
 	"color_scheme": "Packages/3024 Color Scheme/3024 Night.tmTheme",
-	"theme": "Soda Dark.sublime-theme",
-	"highlight_modified_tabs": true,
-	"scroll_past_end": true,
-	"soda_classic_tabs": true,
-	"translate_tabs_to_spaces": true,
-	"tab_size": 2,
-	"hot_exit": false,
-	"remember_open_files": true,
 	"enable_tab_scrolling": false,
+	"highlight_modified_tabs": true,
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Vintage"
-	]
+	],
+	"remember_open_files": true,
+	"scroll_past_end": true,
+	"soda_classic_tabs": true,
+	"tab_size": 2,
+	"theme": "Soda Dark.sublime-theme",
+	"translate_tabs_to_spaces": true
 }

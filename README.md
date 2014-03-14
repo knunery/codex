@@ -325,6 +325,9 @@ Git
 
 `git difftool` diffs working repository with commited repository using visual tool
 
+Run `git log master..your-branch-name` to see how many commits there are on your branch
+
+Run `git rebase -i HEAD~#` where # is the number of commits you have done on your branch
 
 Filemerge
 -------------
